@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/views/widgets/custom_text_fild.dart';
 
-import '../../constants.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class AddNoteBottomSheet extends StatelessWidget {
           ),
           CustomTextField(
               hintText: "Title",
-              iconData:  Icon(Icons.title, color: kColor)),
+              iconData: Icons.title,),
           SizedBox(
             height: 24,
           ),

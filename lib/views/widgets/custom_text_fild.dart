@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key,required this.hintText,this.maxLines =1,this.iconData});
   final String hintText;
   final int maxLines ;
-  final Icon? iconData;
+  final IconData? iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,10 @@ class CustomTextField extends StatelessWidget {
         border: buildOutlineInputBorder(),
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(color:  const Color(0xff62FCD7)),
-        prefixIcon: iconData,
+        prefixIcon: Icon(
+          iconData,
+          color: kColor,
+        ),
         hintText: hintText,
 
         hintStyle:  const TextStyle(
