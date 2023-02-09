@@ -15,9 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
+        brightness: Brightness.dark,
+        fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
       home: const NotesView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
