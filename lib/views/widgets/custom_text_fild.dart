@@ -26,8 +26,11 @@ class CustomTextField extends StatelessWidget {
           return null;
         }
       },
+
       cursorColor: kColor,
       maxLines: maxLines,
+
+
       decoration: InputDecoration(
           border: buildOutlineInputBorder(),
           enabledBorder: buildOutlineInputBorder(),

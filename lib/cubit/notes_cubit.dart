@@ -14,23 +14,17 @@ class NotesCubit extends Cubit<NotesState> {
     try {
       var notesBox = Hive.box<NoteModel>(kNotesBox);
       await notesBox.add(note);
+      fetchNotes();
       emit(AddNoteSuccess());
     } catch (e) {
       emit(AddNoteFailure(error: e.toString()));
     }
   }
 
+  List<NoteModel>? note;
   fetchNotes() {
-    emit(NoteLoading());
-    try {
-      var notesBox = Hive.box<NoteModel>(kNotesBox);
-      emit(
-        NoteSuccess(
-          notesBox.values.toList(),
-        ),
-      );
-    } catch (e) {
-      emit(NoteFailure(error: e.toString()));
-    }
+    var notesBox = Hive.box<NoteModel>(kNotesBox);
+
+    note = notesBox.values.toList();
   }
 }
