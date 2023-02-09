@@ -12,13 +12,13 @@ class AddNoteBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<NotesCubit, NotesState>(
       listener: (context, state) {
-        if (state is NoteSuccess) {
+        if (state is AddNoteSuccess) {
           Navigator.pop(context);
         }
       },
       builder: (context, state) {
         return AbsorbPointer(
-          absorbing: state is NoteLoading ? true : false,
+          absorbing: state is AddNoteLoading ? true : false,
           child: Padding(
             padding: EdgeInsets.only(
               top: 16,
@@ -79,7 +79,7 @@ class _AddNoteState extends State<AddNote> {
           BlocBuilder<NotesCubit, NotesState>(
             builder: (context, state) {
               return CustomButton(
-                isLoading: state is NoteLoading ? true : false,
+                isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
