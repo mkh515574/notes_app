@@ -12,7 +12,7 @@ class MyBlocObserver extends BlocObserver {
 
   @override
   void onCreate(BlocBase bloc) {
-    debugPrint('close = $bloc');
+    debugPrint('Create = $bloc');
 
     super.onCreate(bloc);
   }
@@ -25,13 +25,13 @@ class MyBlocObserver extends BlocObserver {
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    print("onError");
+    debugPrint("onError");
     super.onError(bloc, error, stackTrace);
   }
 
   @override
   void onEvent(Bloc bloc, Object? event) {
-    print("onEvent");
+    debugPrint("onEvent");
     super.onEvent(bloc, event);
   }
 }
