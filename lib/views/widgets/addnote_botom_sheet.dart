@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:note_app/cubit/notes_cubit.dart';
+
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_button.dart';
 import 'package:note_app/views/widgets/custom_text_fild.dart';
 
+import '../../conttroler/notes_cubit.dart';
 import 'colors_list_view.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {

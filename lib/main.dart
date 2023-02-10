@@ -6,7 +6,9 @@ import 'package:note_app/models/note_model.dart';
 import 'package:note_app/mybloc.dart';
 import 'package:note_app/views/screens/notes_view.dart';
 
-import 'cubit/notes_cubit.dart';
+import 'conttroler/notes_cubit.dart';
+
+
 
 void main() async {
 

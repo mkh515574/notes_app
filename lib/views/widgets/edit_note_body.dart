@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/cubit/notes_cubit.dart';
+
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_appbar.dart';
 import 'package:note_app/views/widgets/custom_text_fild.dart';
 import 'package:note_app/views/widgets/edit_colors_list_view.dart';
+
+import '../../conttroler/notes_cubit.dart';
 
 
 
