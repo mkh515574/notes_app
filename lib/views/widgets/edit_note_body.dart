@@ -1,10 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubit/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_appbar.dart';
 import 'package:note_app/views/widgets/custom_text_fild.dart';
+import 'package:note_app/views/widgets/edit_colors_list_view.dart';
+
+
 
 class EditNoteBody extends StatefulWidget {
   const EditNoteBody({Key? key, required this.noteModel}) : super(key: key);
@@ -24,11 +26,12 @@ class _EditNoteBodyState extends State<EditNoteBody> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: Column(
           children: [
-             CustomAppBar(
-              onTap: (){
+            CustomAppBar(
+              onTap: () {
                 widget.noteModel.title = title ?? widget.noteModel.title;
                 widget.noteModel.suTitle = suTitle ?? widget.noteModel.suTitle;
                 widget.noteModel.save();
+
                 BlocProvider.of<NotesCubit>(context).fetchNotes();
                 Navigator.pop(context);
               },
@@ -48,13 +51,19 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             const SizedBox(
               height: 16,
             ),
-            CustomTextField(
-              onChanged: (value) {
-                suTitle = value;
-              },
-              hintText: widget.noteModel.suTitle,
-              maxLines: 5,
-            )
+            Expanded(
+              child: CustomTextField(
+                onChanged: (value) {
+                  suTitle = value;
+                },
+                maxLines: 50,
+                hintText: widget.noteModel.suTitle,
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+             EditNoteColorsList(note: widget.noteModel),
           ],
         ),
       ),
