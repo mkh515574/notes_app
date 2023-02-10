@@ -6,6 +6,8 @@ import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_button.dart';
 import 'package:note_app/views/widgets/custom_text_fild.dart';
 
+import 'colors_list_view.dart';
+
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({Key? key}) : super(key: key);
 
@@ -78,6 +80,10 @@ class _AddNoteState extends State<AddNote> {
             hintText: "Content",
             maxLines: 6,
           ),
+          const SizedBox(
+            height: 32,
+          ),
+          const ColorsListView(),
           BlocBuilder<NotesCubit, NotesState>(
             builder: (context, state) {
               return CustomButton(
